@@ -4,13 +4,14 @@
 
 class Fixed {
  private:
-  int number;
-  const int cNumber = 8;
+  int fixedPointNum;
+  static const int fractionalBits = 8;
 
  public:
   Fixed(void);
-  ~Fixed();
   Fixed(const Fixed& fixed);
-  void setRawBits(int const raw);
+  ~Fixed();
+  Fixed& operator=(const Fixed& op);
   int getRawBits(void) const;
+  void setRawBits(int const raw);
 };
