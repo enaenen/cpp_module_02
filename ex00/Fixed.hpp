@@ -3,15 +3,15 @@
 #include <iostream>
 
 class Fixed {
- private:
-  int fixedPointNum;
-  static const int fractionalBits = 8;
+   private:
+	int fixedPointNum;
+	static const int fractionalBits = 8;
 
- public:
-  Fixed(void);
-  Fixed(const Fixed& fixed);
-  ~Fixed();
-  Fixed& operator=(const Fixed& op);
-  int getRawBits(void) const;
-  void setRawBits(int const raw);
+   public:
+	Fixed( void );
+	Fixed( const Fixed& fixed );
+	~Fixed();
+	Fixed& operator=( const Fixed& op );
+	int getRawBits( void ) const;
+	void setRawBits( int const raw );
 };
