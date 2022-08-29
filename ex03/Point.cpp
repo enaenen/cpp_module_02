@@ -23,3 +23,12 @@ Point Point::operator-( const Point &ref ) {
 }
 Fixed Point::getX( void ) const { return ( this->x ); }
 Fixed Point::getY( void ) const { return ( this->y ); }
+
+Fixed crossProd( Point p1, Point p2 ) {
+	return p1.getX() * p2.getY() - p2.getX() * p1.getY();
+}
+
+std::ostream &operator<<( std::ostream &os, const Point &ref ) {
+	std::cout << ref.getX() << ", " << ref.getY();
+	return os;
+}

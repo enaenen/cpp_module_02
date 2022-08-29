@@ -20,4 +20,6 @@ class Point {
 	Fixed getY( void ) const;
 };
 
+Fixed crossProd( Point p1, Point p2 );
 bool bsp( Point const a, Point const b, Point const c, Point const point );
+std::ostream &operator<<( std::ostream &os, const Point &ref );

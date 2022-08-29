@@ -1,8 +1,11 @@
 #include "Fixed.hpp"
+#include <cmath>
 
-Fixed::Fixed( void ) : fixedPointNum() {}
+Fixed::Fixed( void ) : fixedPointNum( 0 ) {}
 
-Fixed::Fixed( const int fpn ) { fixedPointNum = fpn << fractionalBits; }
+Fixed::Fixed( const int fpn )
+	: fixedPointNum( fpn * ( 1 << fractionalBits ) ) {}
+
 Fixed::Fixed( const float fpn ) {
 	fixedPointNum = (int)roundf( fpn * ( 1 << fractionalBits ) );
 }
@@ -114,7 +117,6 @@ const Fixed& Fixed::max( const Fixed& a, const Fixed& b ) {
 	return a;
 }
 
-// << operator
 std::ostream& operator<<( std::ostream& os, const Fixed& fixed ) {
 	return os << fixed.toFloat();
 }
