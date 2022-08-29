@@ -25,7 +25,7 @@ Fixed& Fixed::operator=( const Fixed& op ) {
 		this->setRawBits( op.getRawBits() );
 	return *this;
 }
-// << operator
+
 std::ostream& operator<<( std::ostream& os, const Fixed& fixed ) {
 	return os << fixed.toFloat();
 }
